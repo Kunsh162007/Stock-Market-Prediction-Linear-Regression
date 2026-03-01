@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import os
 
-def plot_predictions(dates, y_true, y_pred, symbol, save_path=None):
+def plot_predictions(dates, y_true, y_pred, symbol, save_path=None, show=False):
     """
     Plots Actual vs Predicted prices.
     """
@@ -19,9 +19,12 @@ def plot_predictions(dates, y_true, y_pred, symbol, save_path=None):
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path)
         print(f"Plot saved to {save_path}")
-    plt.show()
+    
+    if show:
+        plt.show()
+    plt.close()
 
-def plot_residuals(y_true, y_pred, save_path=None):
+def plot_residuals(y_true, y_pred, save_path=None, show=False):
     """
     Plots the residuals (errors).
     """
@@ -36,4 +39,7 @@ def plot_residuals(y_true, y_pred, save_path=None):
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path)
         print(f"Residuals plot saved to {save_path}")
-    plt.show()
+    
+    if show:
+        plt.show()
+    plt.close()
