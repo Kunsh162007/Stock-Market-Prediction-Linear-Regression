@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 
 def plot_predictions(dates, y_true, y_pred, symbol, save_path=None, show=False):
     """
