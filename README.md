@@ -1,38 +1,61 @@
-# Stock Market Prediction using Linear Regression
+# 📈 Stock Market Prediction using Linear Regression
 
-A professional machine learning project that predicts stock market trends (S&P 500) using historical data from Yahoo Finance and a Linear Regression model.
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Machine Learning](https://img.shields.io/badge/ML-Linear--Regression-orange.svg)](https://en.wikipedia.org/wiki/Linear_regression)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## Features
+A professional, modular machine learning pipeline designed to predict stock market trends (specifically the S&P 500) using historical data from Yahoo Finance.
 
-- **Automated Data Ingestion**: Fetches real-time historical data using `yfinance`.
-- **Feature Engineering**: Implements lagged variables and Moving Averages (SMA) for improved prediction.
-- **Modular Architecture**: Clean project structure suitable for professional showcases.
-- **Visualizations**: Generates plots for Actual vs. Predicted prices and residual analysis.
+---
 
-## Project Structure
+## 🚀 Key Features
+
+- **📡 Live Data Ingestion**: Seamlessly fetches real-time historical data using the `yfinance` API.
+- **🛠️ Feature Engineering**: Implements sophisticated lagged variables and Moving Averages (SMA) to capture time-series trends.
+- **🏗️ Modular Architecture**: Clean, production-ready project structure with separated concerns (Data, Ingestion, Preprocessing, Modeling, Visualization).
+- **📊 Insightful Visualizations**: Automatically generates professional-grade plots for trend analysis and performance evaluation.
+
+---
+
+## 📂 Project Structure
 
 ```text
 Linear_Regression/
-├── data/               # Raw and processed datasets
-├── exports/            # Generated plots and saved models
-├── src/                # Source code modules
-│   ├── data_ingestion.py
-│   ├── preprocessing.py
-│   ├── model.py
-│   └── visualization.py
-├── notebooks/          # Optional EDA notebooks
-├── main.py             # Main execution script
+├── data/               # Raw and processed datasets (CSV)
+├── exports/            # Generated professional plots & saved models (.joblib)
+├── src/                # Core Source Code
+│   ├── data_ingestion.py   # API interactions with Yahoo Finance
+│   ├── preprocessing.py    # Feature engineering & scaling logic
+│   ├── model.py            # Linear Regression training/prediction wrapper
+│   └── visualization.py    # Advanced plotting utilities
+├── main.py             # Orchestrates the entire pipeline
 ├── requirements.txt    # Project dependencies
-└── README.md           # Project documentation
+├── LICENSE             # MIT License
+└── README.md           # This comprehensive guide
 ```
 
-## Getting Started
+---
 
-### 1. Prerequisites
+## 📊 Visualizations
 
-Ensure you have Python 3.8+ installed.
+The pipeline automatically generates two key insights for performance monitoring:
 
-### 2. Installation
+### 1. Market Trend Projection
+
+Shows the model's predicted price (Orange) vs the actual closing price (Blue) over the test period.
+![Market Trend](exports/sp500_predictions.png)
+
+### 2. Error Distribution (Residuals)
+
+A histogram analysis of the prediction errors, verifying the model's consistency.
+![Error Distribution](exports/residuals_dist.png)
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Installation
 
 Clone the repository and install the dependencies:
 
@@ -40,26 +63,40 @@ Clone the repository and install the dependencies:
 pip install -r requirements.txt
 ```
 
-### 3. Usage
+### 2. Usage
 
-Run the main script to fetch data, train the model, and generate plots:
+To run the complete pipeline from data fetching to visualization:
 
 ```bash
 python main.py
 ```
 
-## Results
+---
 
-The model predicts the next day's closing price based on the previous 5 days of price history and moving averages.
+## 🧠 Technologies Used
 
-- **Prediction Plot**: Saved in `exports/sp500_predictions.png`
-- **Error Distribution**: Saved in `exports/residuals_dist.png`
+- **Language**: [Python](https://www.python.org/)
+- **Data Manipulation**: [Pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/)
+- **Machine Learning**: [Scikit-Learn](https://scikit-learn.org/)
+- **Data Ingestion**: [yfinance](https://pypi.org/project/yfinance/)
+- **Visualization**: [Matplotlib](https://matplotlib.org/)
 
-## Showcase
+---
 
-This project demonstrates:
+## 📈 Model Performance
 
-- End-to-end Machine Learning pipeline design.
-- Data collection from APIs.
-- Time-series feature engineering.
-- Professional coding standards for GitHub and LinkedIn portfolios.
+Currently optimized for the S&P 500 Index (`^GSPC`):
+
+- **Features**: 5-day Lags, 20-day SMA, 50-day SMA.
+- **Algorithm**: Linear Regression.
+- **Metric**: High $R^2$ accuracy on recent market data.
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+**Developed for Portfolio Showcase** • [Kunsh162007](https://github.com/Kunsh162007)
